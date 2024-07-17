@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #f0a500;
+            font-family: 'Arial', sans-serif;
+        }
+        .header {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .comment-card {
+            background-color: #333;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        .comment-content {
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #f0a500;
+            color: #1a1a1a;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .button:hover {
+            background-color: #ffba26;
+        }
+        .form-inline {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="comment-card">
+        <h1 class="header">Comment id: <%= comment.id %></h1>
+        <h2 class="comment-content"><%= comment.comment %> - <%=comment.username %></h2>
+        <a href="/comments" class="button">Back to index</a>
+        <a href="/comments/<%= comment.id%>/edit" class="button">Edit Comment</a>
+        <form method="POST" action="/comments/<%= comment.id %>?_method=DELETE" class="form-inline">
+            <button class="button">Delete</button>
+        </form>
+    </div>
+</body>
+
+</html>

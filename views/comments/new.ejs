@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Comment</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #f0a500;
+            font-family: 'Arial', sans-serif;
+        }
+        .header {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .form {
+            margin-bottom: 20px;
+        }
+        .form-section {
+            margin-bottom: 10px;
+        }
+        .label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input, .textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #333;
+            color: #f0a500;
+            border: none;
+            border-radius: 5px;
+        }
+        .button {
+            background-color: #f0a500;
+            color: #1a1a1a;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .button:hover {
+            background-color: #ffba26;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="header">Make a new comment</h1>
+    <form action="/comments" method="post" class="form">
+        <section class="form-section">
+            <label for="username" class="label">Enter username:</label>
+            <input type="text" id="username" placeholder="username" name="username" class="input">
+        </section>
+        <section class="form-section">
+            <label for="comment" class="label">Comment Text</label>
+            <textarea id="comment" cols="30" rows="5" name="comment" class="textarea"></textarea>
+        </section>
+        <button class="button">Submit</button>
+    </form>
+    <a href="/comments" class="button">Back to Index</a>
+</body>
+
+</html>
